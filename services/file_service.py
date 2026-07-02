@@ -10,8 +10,6 @@ from __future__ import annotations
 
 from pathlib import Path
 
-import streamlit as st
-
 from config import UPLOAD_DIR
 from utils.logger import get_logger
 
@@ -25,36 +23,32 @@ class FileService:
         """保存先ディレクトリを初期化する。"""
         UPLOAD_DIR.mkdir(parents=True, exist_ok=True)
 
-    def save(self, uploaded_file: st.runtime.uploaded_file_manager.UploadedFile) -> Path:
+    def save(
+        self,
+        filename: str,
+        data: bytes,
+    ) -> Path:
         """
-        アップロードファイルを保存する。
+        ファイルを保存する。
 
         Args:
-            uploaded_file: Streamlitのアップロードファイル
+            filename: ファイル名
+            data: ファイル内容
 
         Returns:
-            保存したファイルのPath
-
-        Raises:
-            ValueError:
-                uploaded_file が None の場合
-            OSError:
-                ファイル保存に失敗した場合
+            保存したPath
         """
-        if uploaded_file is None:
-            raise ValueError("uploaded_file is None.")
-
-        destination = self._create_unique_path(uploaded_file.name)
+        destination = self._create_unique_path(filename)
 
         try:
-            destination.write_bytes(uploaded_file.getbuffer())
+            destination.write_bytes(data)
 
             logger.info("File saved: %s", destination)
 
             return destination
 
         except Exception:
-            logger.exception("Failed to save file: %s", uploaded_file.name)
+            logger.exception("Failed to save file: %s", filename)
             raise
 
     def list_files(self) -> list[Path]:

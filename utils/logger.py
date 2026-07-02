@@ -2,25 +2,44 @@
 共通ロガー
 """
 
+from __future__ import annotations
+
 import logging
 
 from config import LOG_DIR
 
-LOG_DIR.mkdir(exist_ok=True)
+LOG_DIR.mkdir(parents=True, exist_ok=True)
 
-logger = logging.getLogger("AIFileManager")
 
-logger.setLevel(logging.INFO)
+def get_logger(name: str) -> logging.Logger:
+    """
+    Loggerを取得する。
 
-handler = logging.FileHandler(
-    LOG_DIR / "application.log",
-    encoding="utf-8",
-)
+    Args:
+        name: Logger名（通常は __name__）
 
-formatter = logging.Formatter(
-    "%(asctime)s %(levelname)s %(message)s"
-)
+    Returns:
+        Logger
+    """
 
-handler.setFormatter(formatter)
+    logger = logging.getLogger(name)
 
-logger.addHandler(handler)
+    if logger.handlers:
+        return logger
+
+    logger.setLevel(logging.INFO)
+
+    handler = logging.FileHandler(
+        LOG_DIR / "application.log",
+        encoding="utf-8",
+    )
+
+    formatter = logging.Formatter(
+        "%(asctime)s %(levelname)s %(name)s %(message)s"
+    )
+
+    handler.setFormatter(formatter)
+
+    logger.addHandler(handler)
+
+    return logger

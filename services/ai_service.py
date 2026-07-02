@@ -6,7 +6,9 @@ from ai.client import OllamaClient
 from ai.prompts import CHAT_PROMPT
 from ai.prompts import SYSTEM_PROMPT
 
-from utils.logger import logger
+from utils.logger import get_logger
+
+logger = get_logger(__name__)
 
 
 class AIService:

@@ -2,3 +2,6 @@
 2026-07-01 15:20:59,880 INFO Receive Answer
 2026-07-01 17:42:41,380 INFO Send Prompt
 2026-07-01 17:43:01,073 INFO Receive Answer
+2026-07-02 17:49:02,565 INFO services.ai_service Send Prompt
+2026-07-02 17:49:16,988 INFO services.ai_service Receive Answer
+2026-07-02 17:55:23,044 INFO services.file_service File saved: C:\AIFileManager\uploads\手順書.xlsx
