@@ -1,28 +1,58 @@
 import streamlit as st
 
-from config import APP_NAME
-from config import APP_VERSION
-
+from config import APP_NAME, APP_VERSION
 from services.ai_service import AIService
+from services.file_service import FileService
 
-st.set_page_config(
-    page_title=APP_NAME,
-    page_icon="📄",
-    layout="wide"
-)
 
-st.title(APP_NAME)
+def main() -> None:
+    st.set_page_config(
+        page_title=APP_NAME,
+        page_icon="📄",
+        layout="wide",
+    )
 
-st.caption(f"Version {APP_VERSION}")
+    st.title(APP_NAME)
+    st.caption(f"Version {APP_VERSION}")
 
-st.divider()
+    ai_service = AIService()
+    file_service = FileService()
 
-st.success("Sprint1 Package2")
+    st.header("AIチャット")
 
-service = AIService()
+    question = st.text_input("質問")
 
-if st.button("AI接続テスト"):
+    if st.button("送信"):
+        if question:
+            answer = ai_service.ask(question)
+            st.write(answer)
 
-    answer = service.ask("こんにちは")
+    st.divider()
 
-    st.success(answer)
+    st.header("文書アップロード")
+
+    uploaded_file = st.file_uploader(
+        "ファイルを選択",
+        type=["txt", "md", "pdf", "docx", "xlsx"],
+    )
+
+    if uploaded_file is not None:
+        saved_path = file_service.save(
+            filename=uploaded_file.name,
+            data=uploaded_file.getvalue(),
+        )
+        st.success(f"保存しました: {saved_path.name}")
+
+    st.subheader("保存済みファイル")
+
+    files = file_service.list_files()
+
+    if not files:
+        st.info("保存されているファイルはありません。")
+    else:
+        for file in files:
+            st.write(f"📄 {file.name}")
+
+
+if __name__ == "__main__":
+    main()

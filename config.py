@@ -32,3 +32,5 @@ UPLOAD_DIR = BASE_DIR / "uploads"
 OUTPUT_DIR = BASE_DIR / "output"
 
 LOG_DIR = BASE_DIR / "logs"
+
+
