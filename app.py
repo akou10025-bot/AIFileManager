@@ -3,6 +3,7 @@ import streamlit as st
 from config import APP_NAME, APP_VERSION
 from services.ai_service import AIService
 from services.file_service import FileService
+from services.document_service import DocumentService
 
 
 def main() -> None:
@@ -17,6 +18,7 @@ def main() -> None:
 
     ai_service = AIService()
     file_service = FileService()
+    document_service = DocumentService()
 
     st.header("AIチャット")
 
@@ -41,6 +43,17 @@ def main() -> None:
             filename=uploaded_file.name,
             data=uploaded_file.getvalue(),
         )
+        document = document_service.read(saved_path)
+
+        st.subheader("文書内容")
+
+        st.text_area(
+            label="",
+            value=document,
+            height=300,
+            disabled=True,
+        )
+
         st.success(f"保存しました: {saved_path.name}")
 
     st.subheader("保存済みファイル")

@@ -5,3 +5,10 @@
 2026-07-02 17:49:02,565 INFO services.ai_service Send Prompt
 2026-07-02 17:49:16,988 INFO services.ai_service Receive Answer
 2026-07-02 17:55:23,044 INFO services.file_service File saved: C:\AIFileManager\uploads\手順書.xlsx
+2026-07-03 08:59:24,665 INFO services.file_service File saved: C:\AIFileManager\uploads\手順書(1).xlsx
+2026-07-03 08:59:24,666 INFO services.document_service Read request: C:\AIFileManager\uploads\手順書(1).xlsx
+2026-07-03 08:59:24,667 ERROR document.reader Unsupported file type: .xlsx
+2026-07-03 09:00:06,297 INFO services.file_service File saved: C:\AIFileManager\uploads\新規 テキスト ドキュメント.txt
+2026-07-03 09:00:06,298 INFO services.document_service Read request: C:\AIFileManager\uploads\新規 テキスト ドキュメント.txt
+2026-07-03 09:00:06,298 INFO document.reader Read document: C:\AIFileManager\uploads\新規 テキスト ドキュメント.txt
+2026-07-03 09:00:06,298 INFO services.document_service Read completed: C:\AIFileManager\uploads\新規 テキスト ドキュメント.txt
