@@ -54,6 +54,25 @@ def main() -> None:
             disabled=True,
         )
 
+        st.subheader("AI解析")
+
+        if st.button("要約する"):
+            with st.spinner("AIが要約しています..."):
+                try:
+                    summary = ai_service.summarize(document)
+
+                    st.success("要約が完了しました。")
+
+                    st.text_area(
+                        label="要約結果",
+                        value=summary,
+                        height=250,
+                        disabled=True,
+                    )
+
+                except Exception as ex:
+                    st.error(f"AI解析に失敗しました。\n{ex}")
+
         st.success(f"保存しました: {saved_path.name}")
 
     st.subheader("保存済みファイル")

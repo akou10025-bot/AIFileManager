@@ -12,3 +12,34 @@
 2026-07-03 09:00:06,298 INFO services.document_service Read request: C:\AIFileManager\uploads\新規 テキスト ドキュメント.txt
 2026-07-03 09:00:06,298 INFO document.reader Read document: C:\AIFileManager\uploads\新規 テキスト ドキュメント.txt
 2026-07-03 09:00:06,298 INFO services.document_service Read completed: C:\AIFileManager\uploads\新規 テキスト ドキュメント.txt
+2026-07-03 10:40:18,159 INFO services.file_service File saved: C:\AIFileManager\uploads\新規 テキスト ドキュメント.txt
+2026-07-03 10:40:18,159 INFO services.document_service Read request: C:\AIFileManager\uploads\新規 テキスト ドキュメント.txt
+2026-07-03 10:40:18,160 INFO document.reader Read document: C:\AIFileManager\uploads\新規 テキスト ドキュメント.txt
+2026-07-03 10:40:18,160 INFO services.document_service Read completed: C:\AIFileManager\uploads\新規 テキスト ドキュメント.txt
+2026-07-03 10:40:24,854 INFO services.file_service File saved: C:\AIFileManager\uploads\新規 テキスト ドキュメント(1).txt
+2026-07-03 10:40:24,854 INFO services.document_service Read request: C:\AIFileManager\uploads\新規 テキスト ドキュメント(1).txt
+2026-07-03 10:40:24,854 INFO document.reader Read document: C:\AIFileManager\uploads\新規 テキスト ドキュメント(1).txt
+2026-07-03 10:40:24,855 INFO services.document_service Read completed: C:\AIFileManager\uploads\新規 テキスト ドキュメント(1).txt
+2026-07-03 10:40:24,859 INFO services.ai_service Summarize document
+2026-07-03 10:46:13,525 INFO services.file_service File saved: C:\AIFileManager\uploads\新規 テキスト ドキュメント.txt
+2026-07-03 10:46:13,526 INFO services.document_service Read request: C:\AIFileManager\uploads\新規 テキスト ドキュメント.txt
+2026-07-03 10:46:13,526 INFO document.reader Read document: C:\AIFileManager\uploads\新規 テキスト ドキュメント.txt
+2026-07-03 10:46:13,527 INFO services.document_service Read completed: C:\AIFileManager\uploads\新規 テキスト ドキュメント.txt
+2026-07-03 10:46:17,732 INFO services.file_service File saved: C:\AIFileManager\uploads\新規 テキスト ドキュメント(1).txt
+2026-07-03 10:46:17,733 INFO services.document_service Read request: C:\AIFileManager\uploads\新規 テキスト ドキュメント(1).txt
+2026-07-03 10:46:17,733 INFO document.reader Read document: C:\AIFileManager\uploads\新規 テキスト ドキュメント(1).txt
+2026-07-03 10:46:17,734 INFO services.document_service Read completed: C:\AIFileManager\uploads\新規 テキスト ドキュメント(1).txt
+2026-07-03 10:46:17,739 INFO services.ai_service Summarize document
+2026-07-03 10:48:45,562 INFO services.file_service File saved: C:\AIFileManager\uploads\新規 テキスト ドキュメント.txt
+2026-07-03 10:48:45,563 INFO services.document_service Read request: C:\AIFileManager\uploads\新規 テキスト ドキュメント.txt
+2026-07-03 10:48:45,563 INFO document.reader Read document: C:\AIFileManager\uploads\新規 テキスト ドキュメント.txt
+2026-07-03 10:48:45,564 INFO services.document_service Read completed: C:\AIFileManager\uploads\新規 テキスト ドキュメント.txt
+2026-07-03 10:48:51,035 INFO services.file_service File saved: C:\AIFileManager\uploads\新規 テキスト ドキュメント(1).txt
+2026-07-03 10:48:51,035 INFO services.document_service Read request: C:\AIFileManager\uploads\新規 テキスト ドキュメント(1).txt
+2026-07-03 10:48:51,036 INFO document.reader Read document: C:\AIFileManager\uploads\新規 テキスト ドキュメント(1).txt
+2026-07-03 10:48:51,036 INFO services.document_service Read completed: C:\AIFileManager\uploads\新規 テキスト ドキュメント(1).txt
+2026-07-03 10:48:51,042 INFO services.ai_service Summarize document
+2026-07-03 10:49:24,773 INFO services.file_service File saved: C:\AIFileManager\uploads\新規 テキスト ドキュメント.txt
+2026-07-03 10:49:24,773 INFO services.document_service Read request: C:\AIFileManager\uploads\新規 テキスト ドキュメント.txt
+2026-07-03 10:49:24,774 INFO document.reader Read document: C:\AIFileManager\uploads\新規 テキスト ドキュメント.txt
+2026-07-03 10:49:24,774 INFO services.document_service Read completed: C:\AIFileManager\uploads\新規 テキスト ドキュメント.txt
