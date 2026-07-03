@@ -2,8 +2,8 @@ import streamlit as st
 
 from config import APP_NAME, APP_VERSION
 from services.ai_service import AIService
-from services.file_service import FileService
-from services.document_service import DocumentService
+from services.document_repository import DocumentRepository
+from ai.tasks import AITask
 
 
 def main() -> None:
@@ -17,8 +17,8 @@ def main() -> None:
     st.caption(f"Version {APP_VERSION}")
 
     ai_service = AIService()
-    file_service = FileService()
-    document_service = DocumentService()
+
+    repository = DocumentRepository()
 
     st.header("AIチャット")
 
@@ -40,14 +40,14 @@ def main() -> None:
 
     if uploaded_file is not None:
         if st.button("アップロード"):
-            saved_path = file_service.save(
-                filename=uploaded_file.name,
-                data=uploaded_file.getvalue(),
-            )
+            saved_path = repository.save(
+            filename=uploaded_file.name,
+            data=uploaded_file.getvalue(),
+        )
 
             st.success(f"{saved_path.name} を保存しました。")
 
-    files = file_service.list_files()
+    files = repository.list_documents()
 
     file_names = [file.name for file in files]
 
@@ -56,12 +56,26 @@ def main() -> None:
         file_names,
     )
 
+    if st.button("削除"):
+        repository.delete(selected_name)
+
+        st.success("削除しました。")
+
+        st.rerun()
+
     if selected_name:
 
-        path = file_service.get(selected_name)
+        info = repository.get_info(selected_name)
 
-        document = document_service.read(path)
+        document = repository.read(selected_name)
 
+        st.subheader("文書情報")
+
+        st.write(f"**ファイル名** : {info.name}")
+        st.write(f"**サイズ** : {info.size:,} Byte")
+        st.write(
+            f"**更新日時** : {info.updated_at.strftime('%Y/%m/%d %H:%M:%S')}"
+        )
         st.subheader("文書内容")
 
         st.text_area(
@@ -71,20 +85,42 @@ def main() -> None:
             disabled=True,
         )
 
-    st.subheader("AI解析")
+        st.subheader("AI解析")
 
-    if st.button("要約する"):
-
-        with st.spinner("要約中..."):
-
-            summary = ai_service.summarize(document)
-
-        st.text_area(
-            "要約結果",
-            summary,
-            height=250,
-            disabled=True,
+        task = st.selectbox(
+            "解析内容",
+            (
+                AITask.SUMMARY,
+                AITask.KEYWORD,
+                AITask.TAG,
+                AITask.CLASSIFY,
+            ),
+            format_func=lambda task: {
+                AITask.SUMMARY: "要約",
+                AITask.KEYWORD: "キーワード（未実装）",
+                AITask.TAG: "タグ生成（未実装）",
+                AITask.CLASSIFY: "文書分類（未実装）",
+            }[task],
         )
+
+        if st.button("解析実行"):
+
+            with st.spinner("解析中..."):
+
+                if task == AITask.SUMMARY:
+                    result = ai_service.analyze(
+                        document=document,
+                        task=task,
+                    )
+                else:
+                    result = "この機能は次のPackageで実装予定です。"
+
+            st.text_area(
+                "解析結果",
+                result,
+                height=250,
+                disabled=True,
+            )
 
 if __name__ == "__main__":
     main()

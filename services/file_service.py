@@ -6,11 +6,11 @@
     - 保存済みファイル一覧の取得
 """
 
-from __future__ import annotations
-
+from datetime import datetime
 from pathlib import Path
 
 from config import UPLOAD_DIR
+from models.document_info import DocumentInfo
 from utils.logger import get_logger
 
 logger = get_logger(__name__)
@@ -58,7 +58,12 @@ class FileService:
         Returns:
             Pathオブジェクトのリスト
         """
-        files = [path for path in UPLOAD_DIR.iterdir() if path.is_file()]
+        files = [
+            path
+            for path in UPLOAD_DIR.iterdir()
+            if path.is_file()
+            and not path.name.startswith(".")
+        ]
 
         return sorted(files, key=lambda p: p.name.lower())
 
@@ -82,6 +87,44 @@ class FileService:
             raise FileNotFoundError(path)
 
         return path
+
+    def get_file_info(self, path: Path) -> DocumentInfo:
+        """
+        ファイル情報を取得する。
+
+        Args:
+            path:
+                対象ファイル
+
+        Returns:
+            DocumentInfo
+        """
+        stat = path.stat()
+
+        return DocumentInfo(
+            path=path,
+            name=path.name,
+            size=stat.st_size,
+            updated_at=datetime.fromtimestamp(stat.st_mtime),
+        )
+
+    def delete(self, filename: str) -> None:
+        """
+        保存済みファイルを削除する。
+
+        Args:
+            filename:
+                削除するファイル名
+
+        Raises:
+            FileNotFoundError:
+                ファイルが存在しない場合
+        """
+        path = self.get(filename)
+
+        path.unlink()
+
+        logger.info("File deleted: %s", path)
 
     @staticmethod
     def _create_unique_path(filename: str) -> Path:

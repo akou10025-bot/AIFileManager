@@ -1,30 +1,17 @@
-"""
-AIプロンプト生成クラス
+import ai.prompts
+from ai.prompts.prompt_registry import PromptRegistry
 
-責務:
-    - AIへ送信するプロンプトを生成する
-"""
-
-from __future__ import annotations
+from ai.tasks import AITask
 
 
 class PromptBuilder:
-    """AIプロンプト生成クラス。"""
 
-    def build_summary_prompt(self, document: str) -> str:
-        """
-        文書要約用プロンプトを生成する。
+    @staticmethod
+    def build(
+        task: AITask,
+        text: str,
+    ) -> str:
 
-        Args:
-            document:
-                要約対象の文書
+        prompt = PromptRegistry.get(task)
 
-        Returns:
-            AIへ送信するプロンプト
-        """
-        return f"""以下の文書を日本語で分かりやすく要約してください。
-
-# 文書
-
-{document}
-"""
+        return prompt.build(text)

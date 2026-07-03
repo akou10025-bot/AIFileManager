@@ -9,6 +9,7 @@ AIサービス
 from ai.client import OllamaClient
 from ai.prompt_builder import PromptBuilder
 from utils.logger import get_logger
+from ai.tasks import AITask
 
 logger = get_logger(__name__)
 
@@ -33,20 +34,41 @@ class AIService:
         logger.info("Ask AI")
 
         return self._client.generate(question)
-
-    def summarize(self, document: str) -> str:
+    
+    def analyze(
+        self,
+        document: str,
+        task: AITask,
+    ) -> str:
         """
-        文書を要約する。
+        文書をAI解析する。
 
         Args:
             document:
-                要約対象文書
+                文書内容
+            task:
+                AI解析タスク
 
         Returns:
-            AIの要約結果
+            AI解析結果
         """
-        logger.info("Summarize document")
 
-        prompt = self._prompt_builder.build_summary_prompt(document)
+        prompt = PromptBuilder.build(
+            task=task,
+            text=document,
+        )
 
         return self._client.generate(prompt)
+
+    def summarize(
+        self,
+        document: str,
+    ) -> str:
+        """
+        文書要約（Ver1互換API）
+        """
+
+        return self.analyze(
+            document=document,
+            task=AITask.SUMMARY,
+        )
