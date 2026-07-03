@@ -43,3 +43,38 @@
 2026-07-03 10:49:24,773 INFO services.document_service Read request: C:\AIFileManager\uploads\新規 テキスト ドキュメント.txt
 2026-07-03 10:49:24,774 INFO document.reader Read document: C:\AIFileManager\uploads\新規 テキスト ドキュメント.txt
 2026-07-03 10:49:24,774 INFO services.document_service Read completed: C:\AIFileManager\uploads\新規 テキスト ドキュメント.txt
+2026-07-03 21:28:33,410 INFO services.document_service Read request: C:\AIFileManager\uploads\gitkeep
+2026-07-03 21:28:33,411 ERROR document.reader Unsupported file type: 
+2026-07-03 21:34:47,607 INFO services.document_service Read request: C:\AIFileManager\uploads\gitkeep
+2026-07-03 21:34:47,608 ERROR document.reader Unsupported file type: 
+2026-07-03 21:36:11,934 INFO services.document_service Read request: C:\AIFileManager\uploads\gitkeep
+2026-07-03 21:36:11,935 ERROR document.reader Unsupported file type: 
+2026-07-03 21:37:11,576 INFO services.document_service Read request: C:\AIFileManager\uploads\gitkeep
+2026-07-03 21:37:11,579 INFO services.document_service Read completed: C:\AIFileManager\uploads\gitkeep
+2026-07-03 21:37:33,858 INFO services.document_service Read request: C:\AIFileManager\uploads\gitkeep
+2026-07-03 21:37:33,860 INFO document.reader Read document: C:\AIFileManager\uploads\gitkeep
+2026-07-03 21:37:33,861 INFO services.document_service Read completed: C:\AIFileManager\uploads\gitkeep
+2026-07-03 21:43:20,118 INFO services.file_service File saved: C:\AIFileManager\uploads\paperless.txt
+2026-07-03 21:43:20,127 INFO services.document_service Read request: C:\AIFileManager\uploads\paperless.txt
+2026-07-03 21:43:20,135 INFO document.reader Read document: C:\AIFileManager\uploads\paperless.txt
+2026-07-03 21:43:20,140 INFO services.document_service Read completed: C:\AIFileManager\uploads\paperless.txt
+2026-07-03 21:43:24,487 INFO services.document_service Read request: C:\AIFileManager\uploads\paperless.txt
+2026-07-03 21:43:24,491 INFO document.reader Read document: C:\AIFileManager\uploads\paperless.txt
+2026-07-03 21:43:24,492 INFO services.document_service Read completed: C:\AIFileManager\uploads\paperless.txt
+2026-07-03 21:43:24,505 INFO services.ai_service Summarize document
+2026-07-03 21:53:28,322 INFO services.document_service Read request: C:\AIFileManager\uploads\paperless.txt
+2026-07-03 21:53:28,324 INFO document.reader Read document: C:\AIFileManager\uploads\paperless.txt
+2026-07-03 21:53:28,325 INFO services.document_service Read completed: C:\AIFileManager\uploads\paperless.txt
+2026-07-03 21:53:41,760 INFO services.document_service Read request: C:\AIFileManager\uploads\paperless.txt
+2026-07-03 21:53:41,764 INFO document.reader Read document: C:\AIFileManager\uploads\paperless.txt
+2026-07-03 21:53:41,765 INFO services.document_service Read completed: C:\AIFileManager\uploads\paperless.txt
+2026-07-03 21:54:22,879 INFO services.document_service Read request: C:\AIFileManager\uploads\paperless.txt
+2026-07-03 21:54:22,883 INFO document.reader Read document: C:\AIFileManager\uploads\paperless.txt
+2026-07-03 21:54:22,884 INFO services.document_service Read completed: C:\AIFileManager\uploads\paperless.txt
+2026-07-03 21:54:28,103 INFO services.document_service Read request: C:\AIFileManager\uploads\py起動.txt
+2026-07-03 21:54:28,105 INFO document.reader Read document: C:\AIFileManager\uploads\py起動.txt
+2026-07-03 21:54:28,107 INFO services.document_service Read completed: C:\AIFileManager\uploads\py起動.txt
+2026-07-03 21:54:31,751 INFO services.document_service Read request: C:\AIFileManager\uploads\py起動.txt
+2026-07-03 21:54:31,754 INFO document.reader Read document: C:\AIFileManager\uploads\py起動.txt
+2026-07-03 21:54:31,755 INFO services.document_service Read completed: C:\AIFileManager\uploads\py起動.txt
+2026-07-03 21:54:31,770 INFO services.ai_service Summarize document

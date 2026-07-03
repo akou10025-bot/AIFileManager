@@ -62,6 +62,27 @@ class FileService:
 
         return sorted(files, key=lambda p: p.name.lower())
 
+    def get(self, filename: str) -> Path:
+        """
+        ファイル名から保存済みファイルを取得する。
+
+        Args:
+            filename:
+                ファイル名
+
+        Returns:
+            Path
+
+        Raises:
+            FileNotFoundError
+        """
+        path = UPLOAD_DIR / filename
+
+        if not path.exists():
+            raise FileNotFoundError(path)
+
+        return path
+
     @staticmethod
     def _create_unique_path(filename: str) -> Path:
         """

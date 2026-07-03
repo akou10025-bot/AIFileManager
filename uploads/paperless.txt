@@ -1,0 +1,8 @@
+sudo adduser paperless
+sudo usermod -aG sudo paperless
+
+sudo apt update
+sudo apt install docker.io docker-comporse-v2
+wget https://raw.githubusercontent.com/paperless-ngx/paperless-ngx/main/docker/compose/docker-compose.postgres.yml -O docker-compose.yml
+wget https://raw.githubusercontent.com/paperless-ngx/paperless-ngx/main/docker/compose/.env -O .env
+nano .env

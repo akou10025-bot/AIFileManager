@@ -31,60 +31,60 @@ def main() -> None:
 
     st.divider()
 
-    st.header("文書アップロード")
+    st.header("Document Repository")
 
     uploaded_file = st.file_uploader(
         "ファイルを選択",
-        type=["txt", "md", "pdf", "docx", "xlsx"],
+        type=["txt", "md"],
     )
 
     if uploaded_file is not None:
-        saved_path = file_service.save(
-            filename=uploaded_file.name,
-            data=uploaded_file.getvalue(),
-        )
-        document = document_service.read(saved_path)
+        if st.button("アップロード"):
+            saved_path = file_service.save(
+                filename=uploaded_file.name,
+                data=uploaded_file.getvalue(),
+            )
+
+            st.success(f"{saved_path.name} を保存しました。")
+
+    files = file_service.list_files()
+
+    file_names = [file.name for file in files]
+
+    selected_name = st.selectbox(
+        "保存済み文書",
+        file_names,
+    )
+
+    if selected_name:
+
+        path = file_service.get(selected_name)
+
+        document = document_service.read(path)
 
         st.subheader("文書内容")
 
         st.text_area(
-            label="",
-            value=document,
+            "",
+            document,
             height=300,
             disabled=True,
         )
 
-        st.subheader("AI解析")
+    st.subheader("AI解析")
 
-        if st.button("要約する"):
-            with st.spinner("AIが要約しています..."):
-                try:
-                    summary = ai_service.summarize(document)
+    if st.button("要約する"):
 
-                    st.success("要約が完了しました。")
+        with st.spinner("要約中..."):
 
-                    st.text_area(
-                        label="要約結果",
-                        value=summary,
-                        height=250,
-                        disabled=True,
-                    )
+            summary = ai_service.summarize(document)
 
-                except Exception as ex:
-                    st.error(f"AI解析に失敗しました。\n{ex}")
-
-        st.success(f"保存しました: {saved_path.name}")
-
-    st.subheader("保存済みファイル")
-
-    files = file_service.list_files()
-
-    if not files:
-        st.info("保存されているファイルはありません。")
-    else:
-        for file in files:
-            st.write(f"📄 {file.name}")
-
+        st.text_area(
+            "要約結果",
+            summary,
+            height=250,
+            disabled=True,
+        )
 
 if __name__ == "__main__":
     main()

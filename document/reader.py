@@ -51,9 +51,12 @@ class DocumentReader:
 
         suffix = path.suffix.lower()
 
-        if suffix not in self._SUPPORTED_SUFFIXES:
-            logger.error("Unsupported file type: %s", suffix)
-            raise ValueError(f"Unsupported file type: {suffix}")
+        print(path)
+        print(path.suffix)
+
+        # if suffix not in self._SUPPORTED_SUFFIXES:
+        #     logger.error("Unsupported file type: %s", suffix)
+        #     raise ValueError(f"Unsupported file type: {suffix}")
 
         logger.info("Read document: %s", path)
 
