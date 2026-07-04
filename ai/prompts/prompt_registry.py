@@ -1,21 +1,15 @@
-"""
-Prompt Registry
-"""
-
-from __future__ import annotations
-
-from ai.tasks import AITask
 from ai.prompts.base_prompt import BasePrompt
+from ai.tasks import AITask
 
 
 class PromptRegistry:
 
-    _registry = {}
+    _prompts = {}
 
     @classmethod
-    def register(
-        cls,
-        prompt: BasePrompt,
-    ):
+    def register(cls, task, prompt):
+        cls._prompts[task] = prompt
 
-        cls._registry[prompt.TASK] = prompt
+    @classmethod
+    def get(cls, task):
+        return cls._prompts[task]
