@@ -206,3 +206,43 @@
 2026-07-04 11:35:00,592 INFO services.document_service Read request: C:\AIFileManager\uploads\paperless.txt
 2026-07-04 11:35:00,604 INFO document.reader Read document: C:\AIFileManager\uploads\paperless.txt
 2026-07-04 11:35:00,605 INFO services.document_service Read completed: C:\AIFileManager\uploads\paperless.txt
+2026-07-04 11:52:28,715 INFO services.document_service Read request: C:\AIFileManager\uploads\paperless.txt
+2026-07-04 11:52:28,724 INFO document.reader Read document: C:\AIFileManager\uploads\paperless.txt
+2026-07-04 11:52:28,724 INFO services.document_service Read completed: paperless.txt (364 characters)
+2026-07-04 11:52:34,362 INFO services.document_service Read request: C:\AIFileManager\uploads\paperless.txt
+2026-07-04 11:52:34,366 INFO document.reader Read document: C:\AIFileManager\uploads\paperless.txt
+2026-07-04 11:52:34,367 INFO services.document_service Read completed: paperless.txt (364 characters)
+2026-07-04 11:52:34,383 INFO services.document_service Read request: C:\AIFileManager\uploads\paperless.txt
+2026-07-04 11:52:34,391 INFO document.reader Read document: C:\AIFileManager\uploads\paperless.txt
+2026-07-04 11:52:34,392 INFO services.document_service Read completed: paperless.txt (364 characters)
+2026-07-04 11:52:34,393 INFO services.document_service Read request: C:\AIFileManager\uploads\py起動.txt
+2026-07-04 11:52:34,400 INFO document.reader Read document: C:\AIFileManager\uploads\py起動.txt
+2026-07-04 11:52:34,401 INFO services.document_service Read completed: py起動.txt (43 characters)
+2026-07-04 11:55:50,668 INFO services.document_service Read request: C:\AIFileManager\uploads\paperless.txt
+2026-07-04 11:55:50,672 INFO document.reader Read document: C:\AIFileManager\uploads\paperless.txt
+2026-07-04 11:55:50,673 INFO services.document_service Read completed: paperless.txt (364 characters)
+2026-07-04 11:56:01,911 INFO services.document_service Read request: C:\AIFileManager\uploads\paperless.txt
+2026-07-04 11:56:01,919 INFO document.reader Read document: C:\AIFileManager\uploads\paperless.txt
+2026-07-04 11:56:01,920 INFO services.document_service Read completed: paperless.txt (364 characters)
+2026-07-04 11:56:01,934 INFO services.document_service Read request: C:\AIFileManager\uploads\paperless.txt
+2026-07-04 11:56:01,937 INFO document.reader Read document: C:\AIFileManager\uploads\paperless.txt
+2026-07-04 11:56:01,938 INFO services.document_service Read completed: paperless.txt (364 characters)
+2026-07-04 11:56:01,939 INFO services.document_service Read request: C:\AIFileManager\uploads\py起動.txt
+2026-07-04 11:56:01,949 INFO document.reader Read document: C:\AIFileManager\uploads\py起動.txt
+2026-07-04 11:56:01,950 INFO services.document_service Read completed: py起動.txt (43 characters)
+2026-07-04 12:16:36,323 INFO services.document_service Read request: C:\AIFileManager\uploads\paperless.txt
+2026-07-04 12:16:36,328 INFO document.reader Read document: C:\AIFileManager\uploads\paperless.txt
+2026-07-04 12:16:36,330 INFO services.document_service Read completed: paperless.txt (364 characters)
+2026-07-04 12:17:08,790 INFO services.document_service Read request: C:\AIFileManager\uploads\paperless.txt
+2026-07-04 12:17:08,796 INFO document.reader Read document: C:\AIFileManager\uploads\paperless.txt
+2026-07-04 12:17:08,797 INFO services.document_service Read completed: paperless.txt (364 characters)
+2026-07-04 12:17:09,747 INFO services.document_service Read request: C:\AIFileManager\uploads\paperless.txt
+2026-07-04 12:17:09,762 INFO document.reader Read document: C:\AIFileManager\uploads\paperless.txt
+2026-07-04 12:17:09,763 INFO services.document_service Read completed: paperless.txt (364 characters)
+2026-07-04 12:17:09,784 INFO services.document_service Read request: C:\AIFileManager\uploads\paperless.txt
+2026-07-04 12:17:09,796 INFO document.reader Read document: C:\AIFileManager\uploads\paperless.txt
+2026-07-04 12:17:09,798 INFO services.document_service Read completed: paperless.txt (364 characters)
+2026-07-04 12:17:09,799 INFO services.document_service Read request: C:\AIFileManager\uploads\py起動.txt
+2026-07-04 12:17:09,806 INFO document.reader Read document: C:\AIFileManager\uploads\py起動.txt
+2026-07-04 12:17:09,807 INFO services.document_service Read completed: py起動.txt (43 characters)
+2026-07-04 12:17:09,808 INFO services.ai_service Ask AI
